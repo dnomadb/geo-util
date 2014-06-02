@@ -11,8 +11,8 @@ var offsetPoint = function(p1,a,d){
 	return {"lat":lat2*(180.0/Math.PI),"lng":lon2*(180.0/Math.PI)}
 }
 var bearing = function(p1,p2){
-	var dLon = (Math.PI/180.0)*((p2.lng-p1.lng));
-	var lat1 = (Math.PI/180.0)*p1.lat;
+	var dLon = (Math.PI/180.0)*((p2.lng-p1.lng)),
+		lat1 = (Math.PI/180.0)*p1.lat;
 	var lat2 = (Math.PI/180.0)*p2.lat;
 
 	var y = Math.sin(dLon) * Math.cos(lat2);
