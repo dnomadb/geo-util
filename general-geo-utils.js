@@ -12,12 +12,11 @@ var offsetPoint = function(p1,a,d){
 }
 var bearing = function(p1,p2){
 	var dLon = (Math.PI/180.0)*((p2.lng-p1.lng)),
-		lat1 = (Math.PI/180.0)*p1.lat;
-	var lat2 = (Math.PI/180.0)*p2.lat;
-
-	var y = Math.sin(dLon) * Math.cos(lat2);
-	var x = Math.cos(lat1)*Math.sin(lat2) - Math.sin(lat1)*Math.cos(lat2)*Math.cos(dLon);
-	var brng = Math.atan2(y, x)*(180.0/Math.PI);
+		lat1 = (Math.PI/180.0)*p1.lat,
+		lat2 = (Math.PI/180.0)*p2.lat,
+		y = Math.sin(dLon) * Math.cos(lat2),
+		x = Math.cos(lat1)*Math.sin(lat2) - Math.sin(lat1)*Math.cos(lat2)*Math.cos(dLon),
+		brng = Math.atan2(y, x)*(180.0/Math.PI);
 	return brng
 }
 var latLng2tile = function(lat,lon,zoom){
